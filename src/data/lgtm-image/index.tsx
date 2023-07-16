@@ -9,7 +9,6 @@ export const getImageList = async (): Promise<DataResponse<LgtmImageList>> => {
       endpoint: "lgtm-images",
     })
     .then((res) => {
-      console.log(res.contents.map((image) => image.imageSrc.url));
       return {
         data: res.contents,
       };
