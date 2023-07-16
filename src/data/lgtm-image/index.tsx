@@ -1,11 +1,11 @@
 import { microCmsClient } from "../microcms";
-import { MicroCmsResponse } from "../microcms/model";
+import { MicroCmsArrayResponse } from "../microcms/model";
 import { DataResponse } from "../model";
 import { LgtmImageList } from "./model";
 
 export const getImageList = async (): Promise<DataResponse<LgtmImageList>> => {
   return microCmsClient
-    .get<MicroCmsResponse<LgtmImageList>>({
+    .get<MicroCmsArrayResponse<LgtmImageList>>({
       endpoint: "lgtm-images",
     })
     .then((res) => {
