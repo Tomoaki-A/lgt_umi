@@ -9,7 +9,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={clsx("bg-black", "text-white", ["flex", "justify-center"])}
+        className={clsx(
+          ["bg-black", "text-white"],
+          ["flex", "justify-center"],
+          "py-4"
+        )}
       >
         <div className={clsx(["w-[calc(100%_-_40px)]", "max-w-4xl"])}>
           {children}
