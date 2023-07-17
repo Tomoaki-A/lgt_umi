@@ -1,7 +1,7 @@
-import Profile from "src/component/entity/Profile";
-import LgtmImageList from "../component/entity/LgtmImageList";
 import clsx from "clsx";
-import Divider from "src/component/ui-component/Divider";
+import LgtmImageList from "src/components/entity/LgtmImageList";
+import Profile from "src/components/entity/Profile";
+import Divider from "src/components/ui-component/Divider";
 
 export default function Home() {
   return (
