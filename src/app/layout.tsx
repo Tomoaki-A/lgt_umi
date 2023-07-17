@@ -11,7 +11,7 @@ export default function RootLayout({
       <body
         className={clsx("bg-black", "text-white", ["flex", "justify-center"])}
       >
-        <div className={clsx(["w-[calc(100%_-_40px)]", "max-w-5xl"])}>
+        <div className={clsx(["w-[calc(100%_-_40px)]", "max-w-4xl"])}>
           {children}
         </div>
       </body>
