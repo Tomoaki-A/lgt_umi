@@ -1,4 +1,5 @@
 "use client";
+import Tooltip from "../Tooltip";
 import { useViewModel } from "./useViewModel";
 
 type Props = {
@@ -7,11 +8,11 @@ type Props = {
 };
 
 function ClipCopyButton({ text, children }: Props) {
-  const { handleClickCopyableElement } = useViewModel({ text });
+  const { handleClickCopyableElement, isTooltipOpen } = useViewModel({ text });
   return (
-    <button type="button" onClick={handleClickCopyableElement}>
-      {children}
-    </button>
+    <div onClick={handleClickCopyableElement}>
+      <Tooltip isOpen={isTooltipOpen}>{children}</Tooltip>
+    </div>
   );
 }
 
