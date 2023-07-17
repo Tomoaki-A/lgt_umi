@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import "./globals.css";
 import clsx from "clsx";
+
+export const metadata: Metadata = {
+  title: "LGT-Umi🐾",
+  description: "うみちゃん画像でLGTMを送ろう！",
+};
 
 export default function RootLayout({
   children,
