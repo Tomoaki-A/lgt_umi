@@ -3,7 +3,7 @@ import "./globals.css";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
-  title: "LGT-Umi🐾",
+  title: "LGT-Umi🐾 うみがLGTMと言っています。",
   description: "うみちゃん画像でLGTMを送ろう！",
 };
 
