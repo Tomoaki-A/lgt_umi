@@ -3,6 +3,7 @@ import ClipCopyButton from "src/components/ui-component/ClipCopyButton";
 import { LgtmImage } from "src/data/lgtm-image/model";
 import { getMarkdownImageText } from "src/domain/entity/lgtm";
 import {
+  COPY_LGTM_PARAM,
   LGTM_IMAGE_CROP_HEIGHT,
   LGTM_IMAGE_CROP_WIDTH,
   LGTM_PARAM,
@@ -14,7 +15,8 @@ type Props = {
 
 function LgtmImage({ imageSrc }: Props) {
   const src = `${imageSrc.url}${LGTM_PARAM}`;
-  const clipUrl = getMarkdownImageText(src);
+  const copySrc = `${imageSrc.url}${COPY_LGTM_PARAM}`;
+  const clipUrl = getMarkdownImageText(copySrc);
   return (
     <div>
       <ClipCopyButton text={clipUrl}>
