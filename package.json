@@ -12,6 +12,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@egoist/tailwindcss-icons": "^1.1.0",
+    "@iconify-json/ic": "^1.1.13",
     "@radix-ui/react-toast": "^1.1.4",
     "@radix-ui/react-tooltip": "^1.0.6",
     "@types/node": "20.4.2",
