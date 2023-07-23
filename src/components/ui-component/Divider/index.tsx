@@ -1,5 +1,3 @@
-import clsx from "clsx";
-
 function Divider() {
   return (
     <div
