@@ -5,6 +5,15 @@ import clsx from "clsx";
 export const metadata: Metadata = {
   title: "LGT-Umi🐾 うみがLGTMと言っています。",
   description: "うみちゃん画像でLGTMを送ろう！",
+  keywords: "うみ, LGTM, うみちゃん, うみちゃん画像",
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: "https://lgtm-umi.vercel.app/",
+    siteName: "LGT-Umi🐾 うみがLGTMと言っています。",
+    title: "LGT-Umi🐾 うみがLGTMと言っています。",
+    description: "うみちゃん画像でLGTMを送ろう！",
+  },
 };
 
 export default function RootLayout({
