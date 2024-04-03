@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ClipCopyButton from "src/components/ui-component/ClipCopyButton";
+import ClipCopyButton from "src/app/components/ui-component/ClipCopyButton";
 import { LgtmImage } from "src/data/lgtm-image/model";
 import { getMarkdownImageText } from "src/domain/entity/lgtm";
 import {
@@ -20,12 +20,20 @@ function LgtmImage({ imageSrc }: Props) {
   return (
     <div>
       <ClipCopyButton text={clipUrl}>
-        <Image
-          src={src}
-          alt=""
-          width={LGTM_IMAGE_CROP_WIDTH / 2}
-          height={LGTM_IMAGE_CROP_HEIGHT / 2}
-        />
+        <div
+          style={{
+            maxWidth: LGTM_IMAGE_CROP_WIDTH / 2,
+            maxHeight: LGTM_IMAGE_CROP_HEIGHT / 2,
+          }}
+        >
+          <Image
+            className="w-full"
+            src={src}
+            alt=""
+            width={LGTM_IMAGE_CROP_WIDTH / 2}
+            height={LGTM_IMAGE_CROP_HEIGHT / 2}
+          />
+        </div>
       </ClipCopyButton>
     </div>
   );
