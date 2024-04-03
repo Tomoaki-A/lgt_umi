@@ -14,7 +14,15 @@ async function Profile() {
 
   return (
     <div>
-      <div className={clsx("flex", "items-center")}>
+      <div
+        className={clsx(
+          "flex",
+          "flex-col",
+          "sm:flex-row",
+          "items-center",
+          "gap-x-1"
+        )}
+      >
         <div className={clsx("w-1/3", "flex", "justify-center")}>
           <div className={clsx("w-fit", "rounded-full", "overflow-hidden")}>
             <Image src={imageUrl.url} alt="" width={150} height={150} />
