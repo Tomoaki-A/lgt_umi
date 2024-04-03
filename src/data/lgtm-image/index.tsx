@@ -7,6 +7,7 @@ export const getImageList = async (): Promise<DataResponse<LgtmImageList>> => {
   return microCmsClient
     .get<MicroCmsArrayResponse<LgtmImageList>>({
       endpoint: "lgtm-images",
+      queries: { limit: 50 },
     })
     .then((res) => {
       return {
