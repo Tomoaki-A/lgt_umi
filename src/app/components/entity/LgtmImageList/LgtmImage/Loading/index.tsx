@@ -15,7 +15,7 @@ const Loading = () => {
       ])}
       style={{
         maxWidth: LGTM_IMAGE_CROP_WIDTH / 2,
-        height: LGTM_IMAGE_CROP_HEIGHT / 2,
+        minHeight: LGTM_IMAGE_CROP_HEIGHT / 3,
       }}
     >
       <svg

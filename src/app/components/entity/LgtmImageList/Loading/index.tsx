@@ -1,8 +1,7 @@
-import clsx from "clsx";
 import LgtmImageLoading from "../LgtmImage/Loading";
 import ImageListLayout from "../ImageListLayout";
 
-const LOADING_COUNT = 9;
+const LOADING_COUNT = 12;
 
 const Loading = () => {
   return (

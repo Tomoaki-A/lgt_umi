@@ -1,16 +1,21 @@
-import clsx from "clsx";
+"use client";
 import React from "react";
+import useSWR from "swr";
 import { getImageList } from "src/data/lgtm-image";
 import LgtmImage from "./LgtmImage";
 import { getShuffledList } from "src/domain/primitives/array";
 import ImageListLayout from "./ImageListLayout";
+import Loading from "./Loading";
 
-async function LgtmImageList() {
-  const { data } = await getImageList();
-  if (!data) return null;
+function LgtmImageList() {
+  const { data, isValidating } = useSWR("lgtm-images", () => getImageList(), {
+    revalidateOnFocus: false,
+  });
+
+  if (isValidating) return <Loading />;
 
   const displayData = getShuffledList({
-    itemList: data,
+    itemList: data?.data || [],
   });
 
   return (
