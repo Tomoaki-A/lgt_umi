@@ -13,16 +13,17 @@ function Toast() {
   if (isToastShown) {
     return (
       <div
-        className={clsx(["fixed", "bottom-3", "md:right-3"], "bg-black", [
-          "w-[80%]",
-          "md:w-[35%]",
-          "md:max-w-[400px]",
-        ])}
+        className={clsx(
+          ["fixed", "bottom-3", "md:right-3"],
+          "bg-black",
+          "rounded-md",
+          ["w-[80%]", "md:w-[35%]", "md:max-w-[400px]"]
+        )}
       >
         <div
           className={clsx(
-            "p-4",
-            ["border", "border-solid", "border-gray-600", "rounded"],
+            ["p-2", "md:p-4"],
+            ["border", "border-solid", "border-gray-600", "rounded-md"],
             ["flex", "justify-between", "items-center"],
             "min-w-[30%]"
           )}
