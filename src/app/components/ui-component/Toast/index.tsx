@@ -1,25 +1,40 @@
 "use client";
-import * as RadixToast from "@radix-ui/react-toast";
+import clsx from "clsx";
 import React from "react";
-
-type Props = {
-  children: React.ReactNode;
-};
+import { useFeedback } from "src/domain/entity/feedback/hooks/useFeedback";
 
 /**
  * RSCでトースターの実装が難しく断念
  * @todo 要調査
  */
 function Toast() {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <RadixToast.Provider swipeDirection="right" duration={2000}>
-      <RadixToast.Root open={open} onOpenChange={setOpen}>
-        <RadixToast.Description>コピーしました</RadixToast.Description>
-      </RadixToast.Root>
-      <RadixToast.Viewport className="[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none" />
-    </RadixToast.Provider>
-  );
+  const { isToastShown, handleHide, toastMessage } = useFeedback();
+
+  if (isToastShown) {
+    return (
+      <div
+        className={clsx(["fixed", "bottom-3", "md:right-3"], "bg-black", [
+          "w-[80%]",
+          "md:w-[35%]",
+          "md:max-w-[400px]",
+        ])}
+      >
+        <div
+          className={clsx(
+            "p-4",
+            ["border", "border-solid", "border-gray-600", "rounded"],
+            ["flex", "justify-between", "items-center"],
+            "min-w-[30%]"
+          )}
+        >
+          <div>{toastMessage}</div>
+          <div className={clsx("p-1")}>
+            <button onClick={handleHide}>X</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Toast;

@@ -1,21 +1,18 @@
-import { useState } from "react";
+import { COPY_TO_CLIPBOARD_MESSAGE } from "src/domain/entity/feedback/constants";
+import { useFeedback } from "src/domain/entity/feedback/hooks/useFeedback";
 
 type Props = {
   text: string;
 };
 
 export const useViewModel = ({ text }: Props) => {
-  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+  const { handleShow } = useFeedback();
   const handleClickCopyableElement = () => {
     navigator.clipboard.writeText(text);
-    setIsTooltipOpen(true);
-    setTimeout(() => {
-      setIsTooltipOpen(false);
-    }, 750);
+    handleShow({ message: COPY_TO_CLIPBOARD_MESSAGE });
   };
 
   return {
     handleClickCopyableElement,
-    isTooltipOpen,
   };
 };

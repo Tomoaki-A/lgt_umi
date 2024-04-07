@@ -12,7 +12,7 @@ export const useFeedback = () => {
     setTimeout(() => {
       setIsToastShown(false);
       setToastMessage("");
-    }, 2000);
+    }, 1000);
   };
 
   const handleHide = () => {

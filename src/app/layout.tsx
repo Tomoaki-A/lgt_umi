@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import "./globals.css";
 import clsx from "clsx";
+import Toast from "./components/ui-component/Toast";
 
 export const metadata: Metadata = {
   title: "LGT-Umi🐾 うみがLGTMと言っています。",
@@ -30,6 +31,7 @@ export default function RootLayout({
           "py-4"
         )}
       >
+        <Toast />
         <div className={clsx(["w-[calc(100%_-_40px)]", "max-w-4xl"])}>
           {children}
         </div>
